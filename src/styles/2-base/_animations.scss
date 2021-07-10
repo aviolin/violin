@@ -1,0 +1,29 @@
+@keyframes slide-in {
+  from {
+    transform: translateY(125%) rotate(5deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+  transform: translateX(var(--move-final));
+  }
+  100% {
+  transform: translateX(var(--move-initial));
+  }
+}
+
+@keyframes marquee-left {
+  0% {
+  transform: translateX(var(--move-initial));
+  }
+  100% {
+  transform: translateX(var(--move-final));
+  }
+}

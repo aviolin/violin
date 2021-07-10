@@ -1,0 +1,129 @@
+main {
+  max-width: $breakpoint-lg;
+  padding: 1rem;
+  margin: auto;
+}
+
+section {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+
+  @media only screen and (min-width: $breakpoint-sm) {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+  }
+}
+
+.hero {
+  margin-top: 10rem;
+  .hero__title .line {
+    display: block;
+    overflow: hidden;
+
+    &:nth-child(2) {
+      transform: translateX(10vw);
+    }
+
+    &:nth-child(4) {
+      transform: translateX(4vw);
+    }
+
+    @for $i from 1 to 5 {
+      &:nth-child(#{$i}) .word {
+        animation: slide-in .8s ease both;
+        animation-delay: 150ms * $i;  
+      }
+    }
+  }
+
+  .hero__img-container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero__img {
+    max-width: 60ch;
+    margin-left: auto;
+    animation: slide-in 1.3s cubic-bezier(.03,0,0,1) both;
+    animation-delay: .3s;
+  }
+}
+
+.content {
+  width: 100%;
+
+  .content__text {
+    max-width: 60ch;
+    margin-left: auto;
+  }
+}
+
+.footer {
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 5rem 0;
+
+    a:nth-child(1) {
+      margin-left: 1em;
+    }
+
+    a:nth-child(2) {
+      margin-left: 2em;
+    }
+
+    a:nth-child(3) {
+      margin-left: 0em;
+    }
+  }
+
+  .footer__link {
+    overflow: hidden;
+    visibility: hidden;
+    margin: .5rem 0;
+  }
+
+  .footer__link.animate-in {
+    visibility: visible;
+  }
+
+  .footer__link.animate-in .word {
+    animation: slide-in .8s ease both;
+    animation-delay: calc(50ms * var(--word-index));
+  }
+
+  .footer__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    * + * {
+      margin-top: 1rem;
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-sm) {
+
+    .footer__links {
+      align-items: center;
+      margin: 10rem 0;
+  
+      a:nth-child(1) {
+        margin-left: -3em;
+      }
+  
+      a:nth-child(2) {
+        margin-left: 3em;
+      }
+    }
+
+    .footer__info {
+      flex-direction: row;
+
+      * + * {
+        margin-top: 0;
+      }
+    }
+  }
+}

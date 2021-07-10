@@ -1,0 +1,22 @@
+#cursor {
+  position: fixed;
+  top: -1rem;
+  left: -1rem;
+  display: block;
+  /* border: 1px solid; */
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  z-index: 1000;
+  pointer-events: none;
+  background-color: #01010155;
+  transition: background-color .2s, width .2s, height .2s;
+
+  &.hovering {
+    width: 6rem;
+    height: 6rem;
+    top: -3rem;
+    left: -3rem;
+    background-color: transparent;
+  }
+}

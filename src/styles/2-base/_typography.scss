@@ -1,0 +1,87 @@
+body {
+  font-family: $font-sans-serif;
+}
+
+h1 {
+  font-family: $font-serif;
+  font-size: 9vw;
+  line-height: 9vw;
+  font-weight: 100;
+  margin: 0;
+
+  @media only screen and (min-width: $breakpoint-sm) {
+    font-size: 7vw;
+    line-height: 7vw;
+  }
+
+  @media only screen and (min-width: $breakpoint-xl) {
+    font-size: 6rem;
+    line-height: 6rem;
+  }
+}
+
+h2 {
+  font-family: $font-serif;
+  font-weight: 100;
+  font-size: 2rem;
+/*   text-transform: uppercase;
+ */
+  .word {
+    overflow: hidden;
+  }
+
+  &.animate-in .char {
+    animation: slide-in .8s ease both;
+    animation-delay: calc(20ms * var(--char-index));
+  }
+
+  @media only screen and (min-width: $breakpoint-sm) {
+    font-size: 7vw;
+  }
+
+  @media only screen and (min-width: $breakpoint-xl) {
+    font-size: 6rem;
+  }
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+.playlist {
+  .playlist__item-title {
+    font-family: $font-sans-serif;
+    font-size: 1.4rem;
+  }
+}
+
+.marquee__inner-container {
+  font-size: 1.4rem;
+
+  @media only screen and (min-width: $breakpoint-sm) {
+    font-size: 2.5vw;
+  }
+}
+
+.marquee__item {
+  font-weight: 200;
+  font-family: $font-sans-serif;
+
+  &:nth-child(2n) {
+    font-style: italic;
+  }
+}
+
+.footer {
+  .footer__link {
+    font-family: $font-serif;
+    font-size: 10vw;
+    text-decoration: none;
+  }
+
+  @media only screen and (min-width: $breakpoint-sm) {
+    .footer__link {
+      font-size: 6rem;
+    }
+  }
+}

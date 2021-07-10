@@ -1,0 +1,39 @@
+.playlist {
+  .playlist__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .playlist__item {
+    margin-bottom: 1rem;
+  }
+
+  .playlist__item-sub {
+    text-align: left;
+    margin: .7rem 0 2rem 0rem;
+  }
+
+  .playlist__item-button {
+    margin-left: 1rem; 
+  }
+
+  .playlist__now-playing {
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+  }
+
+  &.small .playlist__item {
+    max-width: 100%;
+  }
+
+  @media only screen and (min-width: $breakpoint-sm) {
+    .playlist__item {
+      max-width: max-content;
+    }
+
+    .playlist__item-sub {
+      margin: .7rem 0 2rem 3rem;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.menu {
+  background-color: $color-accent-100;
+  color: $color-gray-900;
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  width: 100%;
+  max-width: $breakpoint-sm;
+  padding: 1rem;
+  border-right: 1px solid $color-gray-900;
+  overflow-y: auto;
+  transition: opacity .3s;
+
+  .menu__header,
+  .menu__footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu__links {
+    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .menu__link {
+      margin: 1rem 0;
+      font-size: 1.4rem;
+      width: max-content;
+    }
+  }
+
+  .menu__footer {
+    flex-direction: column;
+
+    * + * {
+      margin-top: 1rem;
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-sm) {
+    width: 50vw;
+
+    .menu__links {
+      flex-direction: row;
+    }
+  }
+}

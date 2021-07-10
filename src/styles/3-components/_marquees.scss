@@ -1,0 +1,65 @@
+/* Marquees */
+.marquee {
+  --offset: 20vw;
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
+
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid $color-accent-100;
+  border-bottom: 1px solid $color-accent-100;
+
+  background-color: $color-gray-900;
+  color: $color-accent-100;
+
+  transition: background-color .3s;
+
+  &:hover {
+    /* background-color: $color-gray-900;
+    color: $color-accent-100; */
+  }
+
+  .marquee__inner {
+    width: fit-content;
+    display: flex;
+    position: relative;
+    transform: translateX(var(--move-initial));
+    animation-play-state: running;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .marquee__inner.left {
+    animation: marquee-left $marquee-left-time linear infinite;
+  }
+  .marquee__inner.right {
+    animation: marquee-right $marquee-right-time linear infinite;
+  }
+
+  &:hover .marquee__inner {
+    animation-play-state: paused;
+  }
+
+  .marquee__inner-container {
+    white-space: nowrap;
+    padding-right: 1rem;
+
+    .marquee__item {
+      &::before {
+        content: "/ "; 
+        font-family: $font-serif;
+      }
+    }
+  }
+}
+
+.marquee.small {
+  margin-bottom: 1rem;
+  .marquee__inner-container {
+    font-size: 1.4rem;
+  }
+
+  .marquee__inner {
+    animation-duration: 13s;
+  }
+}

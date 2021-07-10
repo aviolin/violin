@@ -1,0 +1,16 @@
+.testimonial {
+  max-width: $breakpoint-sm;
+  margin: 15rem auto;
+  p {
+    font-family: $font-serif;
+    font-size: 4rem;
+    line-height: 6rem;
+    text-align: center;
+    max-width: $breakpoint-sm;
+  }
+
+  p.sub {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}

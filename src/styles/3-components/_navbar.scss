@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  inset: 0 0 auto 0;
+  padding: 1rem;
+  z-index: 10;
+  background-color: $color-accent-100;
+
+  .navbar__left,
+  .navbar__right {
+    display: flex;
+    align-items: center;
+
+    * + * {
+      margin-left: .5rem;
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-sm) {
+    
+    .navbar__right {
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .navbar__left {
+      align-items: flex-start;
+    }
+
+    .navbar__right {
+      align-items: flex-end;
+    }
+  }
+}

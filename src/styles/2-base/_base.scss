@@ -1,0 +1,30 @@
+@import "normalize";
+@import "utilities";
+@import "animations";
+@import "typography";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  /* background: linear-gradient(to bottom, $color-accent-100 0%, #F7F9FB 50%, #FBF6FB 100%); */
+  background: $color-accent-100;
+  color: $color-gray-900;
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: $color-gray-900;
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+}

@@ -1,0 +1,38 @@
+/* Buttons & Links */
+button, a {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: .3s;
+
+  &.navbar__button,
+  &.navbar__link,
+  &.playlist__item-button,
+  &.menu__link {
+    display: block;
+    white-space: nowrap;
+    padding: 0 .5rem;
+
+    &::before {
+      content: "[ ";
+    }
+
+    &::after {
+      content: " ]";
+    }
+  }
+
+  &:hover,
+  &.selected {
+    color: $color-accent-100;
+    background-color: $color-gray-900;
+  }
+
+  &.footer__link {
+    .footer__link-inner {
+      transition: .001s;
+      white-space: nowrap;
+    }
+  }
+}
