@@ -6,7 +6,6 @@
         <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIVATE</span>
         <span class="line">VIOLIN STUDIO</span>
         <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;IN DENVER</span>
-
       </h1>
       <div class="hero__img-container">
         <figure class="hero__img">
@@ -15,8 +14,11 @@
       </div>
     </section>
     <section class="testimonial">
-      <p data-splitting>"The world's GREATEST violin teacher!"</p>
-      <p class="sub">( at least that's what my students say )</p>
+      <div class="no-overflow">
+        <p>"The world's GREATEST violin teacher!"</p>
+      </div><div class="no-overflow">
+        <p class="sub">( at least that's what my students say )</p>
+      </div>
     </section>
     <section class="content">
       <article class="content__text">

@@ -28,12 +28,7 @@ section {
       transform: translateX(4vw);
     }
 
-    @for $i from 1 to 5 {
-      &:nth-child(#{$i}) .word {
-        animation: slide-in .8s ease both;
-        animation-delay: 150ms * $i;  
-      }
-    }
+    
   }
 
   .hero__img-container {
@@ -44,8 +39,8 @@ section {
   .hero__img {
     max-width: 60ch;
     margin-left: auto;
-    animation: slide-in 1.3s cubic-bezier(.03,0,0,1) both;
-    animation-delay: .3s;
+    /* animation: slide-in 1.3s cubic-bezier(.03,0,0,1) both;
+    animation-delay: .3s; */
   }
 }
 

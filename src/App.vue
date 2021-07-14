@@ -1,7 +1,13 @@
 <template>
-  <Menu v-if="isMenuOpen" @toggle-menu="toggleMenu" />
-  <Navbar @toggle-menu="toggleMenu" :isMenuOpen="isMenuOpen"/>
-  <router-view />
+    <transition name="fade">
+      <Menu v-if="isMenuOpen" @toggle-menu="toggleMenu" />
+    </transition>
+    <Navbar @toggle-menu="toggleMenu" :isMenuOpen="isMenuOpen"/>
+  <router-view v-slot="{ Component }">
+    <transition name="page-transition" :duration="1200" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <script>

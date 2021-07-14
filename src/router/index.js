@@ -31,14 +31,27 @@ const router = createRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
-      return savedPosition
-    } else if (to.hash) {
+      return savedPosition;
+    }
+    else if (to.hash) {
       return {
         el: to.hash,
       }
     } else {
-      return { top: 0 }
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+
+          if (savedPosition) {
+            resolve(savedPosition);
+          } else if (to.hash) {
+            resolve({ el: to.hash });
+          } else {
+            resolve({ top: 0 })
+          }
+        }, 800)
+      })
     }
+    
   }
 });
 
