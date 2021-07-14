@@ -2,10 +2,11 @@
   <main>
     <section class="hero">
       <h1 data-splitting class="hero__title">
-        <span class="line">ARLO ADAMS IS A</span>
-        <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VIOLINIST,</span>
-        <span class="line">INSTRUCTOR</span>
-        <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;& PERFORMER</span>
+        <span class="line">ARLO ADAMS'</span>
+        <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRIVATE</span>
+        <span class="line">VIOLIN STUDIO</span>
+        <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;IN DENVER</span>
+
       </h1>
       <div class="hero__img-container">
         <figure class="hero__img">
@@ -13,7 +14,10 @@
         </figure>
       </div>
     </section>
-    <Playlist />
+    <section class="testimonial">
+      <p data-splitting>"The world's GREATEST violin teacher!"</p>
+      <p class="sub">( at least that's what my students say )</p>
+    </section>
     <section class="content">
       <article class="content__text">
         <h2 data-splitting class="subheading">Biography</h2>
@@ -30,15 +34,12 @@
 
 <script>
 import Footer from './Footer.vue';
-import Playlist from './Playlist.vue';
 import Splitting from 'splitting';
 
-
 export default {
-  name: "home",
+  name: "Students",
   components: {
     Footer,
-    Playlist
   },
   mounted() {
     Splitting();

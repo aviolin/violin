@@ -9,7 +9,7 @@ button, a {
   &.navbar__button,
   &.navbar__link,
   &.playlist__item-button,
-  &.menu__link {
+  &.offset__link {
     display: block;
     white-space: nowrap;
     padding: 0 .5rem;
@@ -24,13 +24,20 @@ button, a {
   }
 
   &:hover,
-  &.selected {
+  &.router-link-exact-active {
     color: $color-accent-100;
     background-color: $color-gray-900;
+
+    &.offset__link {
+      /* .word {
+        color: $color-accent-100;
+        background-color: $color-gray-900;
+      } */
+    }
   }
 
-  &.footer__link {
-    .footer__link-inner {
+  &.offset__link {
+    .offset__link-inner {
       transition: .001s;
       white-space: nowrap;
     }

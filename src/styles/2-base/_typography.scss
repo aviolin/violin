@@ -36,16 +36,28 @@ h2 {
   }
 
   @media only screen and (min-width: $breakpoint-sm) {
-    font-size: 7vw;
+    font-size: calc(2rem + 2vw);
   }
 
   @media only screen and (min-width: $breakpoint-xl) {
-    font-size: 6rem;
+    font-size: 4rem;
   }
 }
 
 p {
   line-height: 1.5rem;
+}
+
+input,
+textarea,
+label {
+  font-size: 2rem;
+  font-family: $font-serif;
+}
+
+form button {
+  font-family: $font-serif;
+  font-size: 2rem;
 }
 
 .playlist {

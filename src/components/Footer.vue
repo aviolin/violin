@@ -1,67 +1,23 @@
 <template>
   <footer class="footer">
     <div class="marquees full-bleed">
-      <div class="marquee">
-        <div class="marquee__inner right" aria-hidden="true">
-          <span class="marquee__inner-container">
-            <span class="marquee__item">Fort Collins Symphony</span>
-            <span class="marquee__item">Nebula Ensemble</span>
-            <span class="marquee__item">Sphere Ensemble</span>
-            <span class="marquee__item">Wild Beautiful Orchestra</span>
-          </span>
-          <span class="marquee__inner-container">
-            <span class="marquee__item">Fort Collins Symphony</span>
-            <span class="marquee__item">Nebula Ensemble</span>
-            <span class="marquee__item">Sphere Ensemble</span>
-            <span class="marquee__item">Wild Beautiful Orchestra</span>
-          </span>
-          <span class="marquee__inner-container">
-            <span class="marquee__item">Fort Collins Symphony</span>
-            <span class="marquee__item">Nebula Ensemble</span>
-            <span class="marquee__item">Sphere Ensemble</span>
-            <span class="marquee__item">Wild Beautiful Orchestra</span>
-          </span>
-          <span class="marquee__inner-container">
-            <span class="marquee__item">Fort Collins Symphony</span>
-            <span class="marquee__item">Nebula Ensemble</span>
-            <span class="marquee__item">Sphere Ensemble</span>
-            <span class="marquee__item">Wild Beautiful Orchestra</span>
-          </span>
-        </div>
-      </div>
-      <div class="marquee">
-        <div class="marquee__inner left" aria-hidden="true">
-          <span class="marquee__inner-container">
-            <span class="marquee__item">Nexus String Quartet</span>
-            <span class="marquee__item">A Lyric Ensemble</span>
-            <span class="marquee__item">Boulder Chamber Orchestra</span>
-            <span class="marquee__item">Greeley Philharmonic</span>
-          </span>
-          <span class="marquee__inner-container">
-            <span class="marquee__item">Nexus String Quartet</span>
-            <span class="marquee__item">A Lyric Ensemble</span>
-            <span class="marquee__item">Boulder Chamber Orchestra</span>
-            <span class="marquee__item">Greeley Philharmonic</span>
-          </span>
-          <span class="marquee__inner-container">
-            <span class="marquee__item">Nexus String Quartet</span>
-            <span class="marquee__item">A Lyric Ensemble</span>
-            <span class="marquee__item">Boulder Chamber Orchestra</span>
-            <span class="marquee__item">Greeley Philharmonic</span>
-          </span>
-          <span class="marquee__inner-container">
-            <span class="marquee__item">Nexus String Quartet</span>
-            <span class="marquee__item">A Lyric Ensemble</span>
-            <span class="marquee__item">Boulder Chamber Orchestra</span>
-            <span class="marquee__item">Greeley Philharmonic</span>
-          </span>
-        </div>
-      </div>
+      <Marquee direction="right">
+        <span class="marquee__item">Fort Collins Symphony</span>
+        <span class="marquee__item">Nebula Ensemble</span>
+        <span class="marquee__item">Sphere Ensemble</span>
+        <span class="marquee__item">Wild Beautiful Orchestra</span>
+      </Marquee>
+      <Marquee direction="left">
+        <span class="marquee__item">Nexus String Quartet</span>
+        <span class="marquee__item">A Lyric Ensemble</span>
+        <span class="marquee__item">Boulder Chamber Orchestra</span>
+        <span class="marquee__item">Greeley Philharmonic</span>
+      </Marquee>
     </div>
-    <div class="footer__links" data-splitting>
-      <a href="index.html" class="footer__link"><span class="footer__link-inner">HOME ></span></a>
-      <a href="students.html" class="footer__link"><span class="footer__link-inner">STUDENTS ></span></a>
-      <a href="#" class="footer__link"><span class="footer__link-inner">CONTACT ></span></a>
+    <div class="offset__links" data-splitting>
+      <router-link to="/" class="offset__link"><span class="offset__link-inner">HOME</span></router-link>
+      <router-link to="/students" class="offset__link"><span class="offset__link-inner">STUDENTS</span></router-link>
+      <router-link to="/contact" class="offset__link"><span class="offset__link-inner">CONTACT</span></router-link>
     </div>
     <div class="footer__info">
       <span class="footer__email">arlo.s.adams@gmail.com</span>
@@ -71,8 +27,13 @@
 </template>
 
 <script>
+import Marquee from './Marquee.vue';
+
 export default {
   name: "Footer",
+  components: {
+    Marquee
+  },
   data() {
     return {
       observer: null,
@@ -86,17 +47,17 @@ export default {
     }
     
     this.observer = new IntersectionObserver(this.observerCallback, options);
-    this.observer.observe(document.querySelector('.footer__links'));
+    this.observer.observe(document.querySelector('.offset__links'));
   },
   methods: {
     observerCallback(entries) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          document.querySelectorAll(".footer__link").forEach(ele => {
+          document.querySelectorAll(".offset__link").forEach(ele => {
             ele.classList.add("animate-in");
           });
         } else {
-          document.querySelectorAll(".footer__link").forEach(ele => {
+          document.querySelectorAll(".offset__link").forEach(ele => {
             ele.classList.remove("animate-in");
           });
         } 

@@ -6,10 +6,10 @@
       </span>
     </div>
     <nav class="navbar__right">
-      <a href="index.html" class="navbar__link selected large-screen-only">HOME</a>
-      <a href="students.html" class="navbar__link large-screen-only">STUDENTS</a>
-      <a href="#" class="navbar__link large-screen-only">CONTACT</a>
-      <button class="navbar__button menu-btn" @click="$emit('toggleMenu')">MENU</button>
+      <router-link to="/" class="navbar__link large-screen-only">HOME</router-link>
+      <router-link to="/students" class="navbar__link large-screen-only">STUDENTS</router-link>
+      <router-link to="/contact" class="navbar__link large-screen-only">CONTACT</router-link>
+      <button class="navbar__button menu-btn" @click="$emit('toggleMenu')">{{ isMenuOpen ? 'CLOSE' : 'MENU' }}</button>
     </nav>
   </header>
 </template>
@@ -17,6 +17,9 @@
 <script>
 export default {
   name: "Navbar",
+  props: {
+    isMenuOpen: Boolean
+  },
   emits: {
     toggleMenu: null
   },

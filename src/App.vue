@@ -1,18 +1,16 @@
 <template>
   <Menu v-if="isMenuOpen" @toggle-menu="toggleMenu" />
-  <Navbar @toggle-menu="toggleMenu" />
-  <Home />
+  <Navbar @toggle-menu="toggleMenu" :isMenuOpen="isMenuOpen"/>
+  <router-view />
 </template>
 
 <script>
-import Home from './components/Home.vue';
 import Menu from './components/Menu.vue';
 import Navbar from './components/Navbar.vue';
 
 export default {
   name: 'App',
   components: {
-    Home,
     Menu,
     Navbar,
   },
@@ -22,8 +20,26 @@ export default {
     }
   },
   methods: {
-    toggleMenu() {
+    toggleMenu(b = null) {
+      const body = document.querySelector('body');
+      if (b !== null) {
+        if (b === "open") {
+          this.isMenuOpen = true;
+          body.classList.add('hide-overflow-y');
+        } else if (b === "close") {
+          this.isMenuOpen = false;
+          body.classList.remove('hide-overflow-y');
+        }
+        return;
+      }
+
       this.isMenuOpen = !this.isMenuOpen;
+      body.classList.toggle('hide-overflow-y');
+    }
+  },
+  watch: {
+    '$route' () {
+      this.toggleMenu('close');
     }
   }
 }
