@@ -1,5 +1,6 @@
 <template>
   <main>
+    <div class="navbar-background"></div>
     <section class="hero">
       <h1 data-splitting class="hero__title">
         <span class="line">ARLO ADAMS IS A</span>
@@ -15,6 +16,11 @@
     </section>
     <Playlist />
     <section class="content">
+      <div class="content__img-container">
+        <figure class="content__img">
+          <img src="../assets/arlo-2.webp" alt="Arlo Adams headshot." />
+        </figure>
+      </div>
       <article class="content__text">
         <h2 data-splitting class="subheading">Biography</h2>
         <div class="no-overflow">

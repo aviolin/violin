@@ -27,8 +27,6 @@ section {
     &:nth-child(4) {
       transform: translateX(4vw);
     }
-
-    
   }
 
   .hero__img-container {
@@ -39,17 +37,37 @@ section {
   .hero__img {
     max-width: 60ch;
     margin-left: auto;
-    /* animation: slide-in 1.3s cubic-bezier(.03,0,0,1) both;
-    animation-delay: .3s; */
   }
 }
 
 .content {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  > * {
+    flex: 1;
+  }
 
   .content__text {
     max-width: 60ch;
     margin-left: auto;
+  }
+
+  .content__img-container {
+    padding-right: 1rem;
+    max-width: 40ch;
+    overflow: hidden;
+  }
+
+  @media only screen and (min-width: $breakpoint-lg) {
+    flex-direction: row;
+    align-items: flex-end;
+
+    .content__img-container {
+      max-width: 60ch;
+    }
   }
 }
 

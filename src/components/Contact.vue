@@ -1,5 +1,6 @@
 <template>
   <main>
+    <div class="navbar-background"></div>
     <section class="hero">
       <h1 data-splitting class="hero__title">
         <span class="line">CONTACT ME</span>

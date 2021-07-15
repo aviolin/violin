@@ -23,9 +23,9 @@
 
   .playlist__item {
     position: relative;
-    &:after {
+    &::after {
       content: "";
-      background-color: yellow;
+      background-color: $color-bright-400;
       height: 100%;
       width: 100%;
       position: absolute;
@@ -37,7 +37,7 @@
 
     &:hover {
       cursor: pointer;
-      &:after {
+      &::after {
         transform: translateX(0);
         /* animation: bouncy-bar 4s ease infinite; */
       }

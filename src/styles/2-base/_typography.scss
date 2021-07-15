@@ -26,14 +26,18 @@ h2 {
   font-size: 2rem;
 /*   text-transform: uppercase;
  */
+ position: relative;
+ width: max-content;
   .word {
     overflow: hidden;
   }
 
-  &.animate-in .char {
+  @include drop-highlight;
+
+  /* &.animate-in .char {
     animation: slide-in .8s ease both;
     animation-delay: calc(20ms * var(--char-index));
-  }
+  } */
 
   @media only screen and (min-width: $breakpoint-sm) {
     font-size: calc(2rem + 2vw);

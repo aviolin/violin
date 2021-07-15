@@ -4,7 +4,11 @@
     </transition>
     <Navbar @toggle-menu="toggleMenu" :isMenuOpen="isMenuOpen"/>
   <router-view v-slot="{ Component }">
-    <transition name="page-transition" :duration="1200" mode="out-in">
+    <transition 
+      name="page-transition" 
+      :duration="1200" 
+      mode="out-in"
+    >
       <component :is="Component" />
     </transition>
   </router-view>
@@ -41,7 +45,7 @@ export default {
 
       this.isMenuOpen = !this.isMenuOpen;
       body.classList.toggle('hide-overflow-y');
-    }
+    },
   },
   watch: {
     '$route' () {

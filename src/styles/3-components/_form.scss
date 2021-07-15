@@ -3,6 +3,11 @@
 
   button {
     float: right;
+    @include drop-highlight;
+
+    &:hover {
+      background-color: transparent;
+    }
   }
 }
 

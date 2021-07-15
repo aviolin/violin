@@ -1,5 +1,6 @@
 <template>
   <main>
+    <div class="navbar-background"></div>
     <section class="hero">
       <h1 data-splitting class="hero__title">
         <span class="line">ARLO ADAMS'</span>
@@ -21,6 +22,11 @@
       </div>
     </section>
     <section class="content">
+      <div class="content__img-container">
+        <figure class="content__img">
+          <img src="../assets/arlo-2.webp" alt="Arlo Adams headshot." />
+        </figure>
+      </div>
       <article class="content__text">
         <h2 data-splitting class="subheading">Biography</h2>
         <p>Arlo Adams is a classically trained violinist, performing as a soloist, chamber musician, and orchestral player in Denver and throughout the Colorado area. Along with performing in the Fort Collins Symphony, he has performed with the Greeley Philharmonic, Boulder Chamber Orchestra, and many Colorado based chamber groups including the Lyric Ensemble, Playground Ensemble, Sphere Ensemble, Con Brio Trio, and ARTsemble.</p>

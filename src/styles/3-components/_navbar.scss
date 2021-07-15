@@ -33,3 +33,14 @@
     }
   }
 }
+
+.navbar-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: .5rem;
+  background-color: $color-bright-400;
+  z-index: 100;
+  transform: translateX(-100%);
+}

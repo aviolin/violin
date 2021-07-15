@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background: $color-bright-400;
+}
+
 body {
   /* background: linear-gradient(to bottom, $color-accent-100 0%, #F7F9FB 50%, #FBF6FB 100%); */
   background: $color-accent-100;
@@ -27,6 +31,23 @@ a {
 
 figure {
   margin: 0;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: $color-bright-400;
+    mix-blend-mode: overlay;
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
 }
 
 input,
@@ -36,6 +57,21 @@ textarea {
   border-bottom: 1px solid $color-gray-900;
   background-color: transparent;
   padding: 1rem;
+
+  &:hover {
+    
+    background-color: $color-bright-400;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: $color-bright-400;
+  }
+
+  &::selection {
+    background-color: $color-gray-900;
+    color: $color-accent-100;
+  }
 }
 
 form {
