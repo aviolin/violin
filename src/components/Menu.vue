@@ -18,6 +18,6 @@ export default {
   name: "Menu",
   components: {
     Playlist
-  }
+  },
 }
 </script>

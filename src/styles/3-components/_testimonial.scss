@@ -1,13 +1,13 @@
 .testimonial {
-  max-width: $breakpoint-sm;
-  margin: 10rem auto;
+  background-color: $color-gray-100;
+  color: $color-gray-900;
+  padding: 5rem 0;
 
   p {
     font-family: $font-serif;
     font-size: 2rem;
     line-height: 3rem;
     text-align: center;
-    max-width: $breakpoint-sm;
   }
 
   p.sub {
@@ -17,7 +17,8 @@
   }
 
   @media only screen and (min-width: $breakpoint-sm) {
-    margin: 15rem auto;
+    padding: 10rem 0;
+
     p {
       font-size: 4rem;
       line-height: 6rem;

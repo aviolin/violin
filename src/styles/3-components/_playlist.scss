@@ -16,13 +16,10 @@
     margin-left: 1rem; 
   }
 
-  .playlist__now-playing {
-    margin-bottom: 2rem;
-    font-size: 1.4rem;
-  }
-
   .playlist__item {
     position: relative;
+    padding-top: 2rem;
+
     &::after {
       content: "";
       background-color: $color-bright-400;
@@ -31,6 +28,7 @@
       position: absolute;
       transform: translateX(-100%);
       top: 0;
+      left: -1px;
       transition: .5s;
       z-index: -1;
     }
@@ -39,7 +37,6 @@
       cursor: pointer;
       &::after {
         transform: translateX(0);
-        /* animation: bouncy-bar 4s ease infinite; */
       }
 
       .playlist__item-button {
@@ -49,11 +46,11 @@
     }
   }
 
-  @media only screen and (min-width: $breakpoint-sm) {
-    .playlist__item {
-      max-width: max-content;
-    }
+  .playlist__item + .playlist__item {
+    border-top: 1px solid $color-gray-100;
+  }
 
+  @media only screen and (min-width: $breakpoint-sm) {
     .playlist__item-sub {
       margin: .7rem 0 2rem 3rem;
     }

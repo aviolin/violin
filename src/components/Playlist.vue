@@ -1,59 +1,15 @@
 <template>
   <section class="playlist">
     <div class="playlist__container">
-      <h2 data-splitting class="subheading">Playlist</h2>
-      <div class="playlist__item">
+      <!-- <h2 data-splitting class="subheading">Playlist</h2> -->
+      <div v-for="track in trackData" :key="track.id" class="playlist__item">
         <div class="playlist__row">
-          <div class="playlist__item-title">1. Bach: Sonata #1 for Solo Violin</div>
-          <button class="playlist__item-button">PLAY</button>
+          <div class="playlist__item-title">{{ track.id + 1 }}. {{ track.name }}</div>
+          <button v-if="isPlayingTrack(track.id)" class="playlist__item-button" @click="stop">STOP</button>
+          <button v-else class="playlist__item-button" @click="play(track.id)">PLAY</button>
         </div>
         <div class="playlist__row">
-          <div class="playlist__item-sub">1st movement, Adagio</div> 
-        </div>
-      </div>
-      <div class="playlist__item">
-        <div class="playlist__row">
-          <div class="playlist__item-title">2. Puts: Arches</div>
-          <button class="playlist__item-button">PLAY</button>
-        </div>
-        <div class="playlist__row">
-          <div class="playlist__item-sub">&nbsp;</div> 
-        </div>
-      </div>
-      <div class="playlist__item">
-        <div class="playlist__row">
-          <div class="playlist__item-title">3. Sibelius: Violin Concerto</div>
-          <button class="playlist__item-button">PLAY</button>
-        </div>
-        <div class="playlist__row">
-          <div class="playlist__item-sub">1st movement, Allegro</div> 
-        </div>
-      </div>
-      <div class="playlist__item">
-        <div class="playlist__row">
-          <div class="playlist__item-title">4. Bach: Sonata #1 for Solo Violin</div>
-          <button class="playlist__item-button">PLAY</button>
-        </div>
-        <div class="playlist__row">
-          <div class="playlist__item-sub">1st movement, Adagio</div> 
-        </div>
-      </div>
-      <div class="playlist__item">
-        <div class="playlist__row">
-          <div class="playlist__item-title">5. Puts: Arches</div>
-          <button class="playlist__item-button">PLAY</button>
-        </div>
-        <div class="playlist__row">
-          <div class="playlist__item-sub">&nbsp;</div> 
-        </div>
-      </div>
-      <div class="playlist__item">
-        <div class="playlist__row">
-          <div class="playlist__item-title">6. Sibelius: Violin Concerto</div>
-          <button class="playlist__item-button">PLAY</button>
-        </div>
-        <div class="playlist__row">
-          <div class="playlist__item-sub">1st movement, Allegro</div> 
+          <div class="playlist__item-sub">{{ track.subtitle }}</div> 
         </div>
       </div>
     </div>
@@ -61,7 +17,57 @@
 </template>
 
 <script>
+const trackData = [
+  {
+    id: 0,
+    name: "Bach: Sonata #1 for Solo Violin",
+    subtitle: "1st movement, Adagio"
+  },
+  {
+    id: 1,
+    name: "Puts: Arches",
+    subtitle: "1st movement, Adagio"
+  },
+  {
+    id: 2,
+    name: "Sibelius: Violin Concerto",
+    subtitle: "1st movement, Adagio"
+  },
+  {
+    id: 3,
+    name: "Bach: Sonata #1 for Solo Violin",
+    subtitle: "1st movement, Adagio"
+  },
+  {
+    id: 4,
+    name: "Puts: Arches",
+    subtitle: "1st movement, Adagio"
+  },
+  {
+    id: 5,
+    name: "Bach: Sonata #1 for Solo Violin",
+    subtitle: "1st movement, Adagio"
+  },
+]
+
 export default {
   name: "Playlist",
+  data() {
+    return {
+      trackData
+    }
+  },
+  inject: ['number', 'playlistController'],
+  methods: {
+    play(track) {
+      this.playlistController.value.play(track);
+    },
+    stop() {
+      this.playlistController.value.stop();
+    },
+    isPlayingTrack(track) {
+      return this.playlistController.value.isPlaying && this.playlistController.value.curTrack === track;
+    }
+  }
 }
 </script>

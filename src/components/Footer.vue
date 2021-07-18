@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer fade-on-page-leave">
     <div class="marquees full-bleed">
       <Marquee direction="right">
         <span class="marquee__item">Fort Collins Symphony</span>

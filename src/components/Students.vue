@@ -14,7 +14,7 @@
         </figure>
       </div>
     </section>
-    <section class="testimonial">
+    <section class="testimonial full-bleed fade-on-page-leave">
       <div class="no-overflow">
         <p>"The world's GREATEST violin teacher!"</p>
       </div><div class="no-overflow">

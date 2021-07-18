@@ -53,6 +53,7 @@ section {
   .content__text {
     max-width: 60ch;
     margin-left: auto;
+    margin-top: 2rem;
   }
 
   .content__img-container {
@@ -64,6 +65,10 @@ section {
   @media only screen and (min-width: $breakpoint-lg) {
     flex-direction: row;
     align-items: flex-end;
+
+    .content__text {
+      margin-top: 0;
+    }
 
     .content__img-container {
       max-width: 60ch;

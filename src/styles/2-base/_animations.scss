@@ -29,36 +29,6 @@
   }
 }
 
-@keyframes bouncy-bar {
-  0% {
-    width: 100%;
-  }
-  30% {
-    width: 108%;
-  }
-  36% {
-    width: 105%;
-  }
-  45% {
-    width: 112%;
-  }
-  50% {
-    width: 107%;
-  }
-  60% {
-    width: 115%;    
-  }
-  72% {
-    width: 104%;
-  }
-  90% {
-    width: 108%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
 @keyframes slide-right {
   from {
     transform: translateX(0%);
@@ -100,11 +70,11 @@
     animation-delay: calc(60ms * var(--word-index)); 
   }
 
-  figure, p, .playlist__container {
+  figure, .playlist__container {
     animation: slide-in 1.2s ease both;
   }
 
-  .footer {
+  .fade-on-page-leave, p {
     animation: fade-in .8s ease both;
   }
 
@@ -119,11 +89,11 @@
     animation: slide-in .4s ease reverse forwards;
   }
 
-  figure, p, .playlist__container, .contact__form {
+  figure, .playlist__container, .contact__form {
     animation: slide-in .4s ease reverse forwards;
   }
 
-  .footer {
+  .fade-on-page-leave, p {
     animation: fade-in .4s ease reverse forwards;
   }
 
