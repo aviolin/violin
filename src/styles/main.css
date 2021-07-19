@@ -765,17 +765,17 @@ button, a {
   transition: .3s;
 }
 
-button.navbar__button, button.navbar__link, button.playlist__item-button, button.offset__link, a.navbar__button, a.navbar__link, a.playlist__item-button, a.offset__link {
+button.navbar__button, button.navbar__link, button.offset__link, a.navbar__button, a.navbar__link, a.offset__link {
   display: block;
   white-space: nowrap;
   padding: 0 .5rem;
 }
 
-button.navbar__button::before, button.navbar__link::before, button.playlist__item-button::before, button.offset__link::before, a.navbar__button::before, a.navbar__link::before, a.playlist__item-button::before, a.offset__link::before {
+button.navbar__button::before, button.navbar__link::before, button.offset__link::before, a.navbar__button::before, a.navbar__link::before, a.offset__link::before {
   content: "[ ";
 }
 
-button.navbar__button::after, button.navbar__link::after, button.playlist__item-button::after, button.offset__link::after, a.navbar__button::after, a.navbar__link::after, a.playlist__item-button::after, a.offset__link::after {
+button.navbar__button::after, button.navbar__link::after, button.offset__link::after, a.navbar__button::after, a.navbar__link::after, a.offset__link::after {
   content: " ]";
 }
 
@@ -1031,6 +1031,17 @@ button.offset__link .offset__link-inner, a.offset__link .offset__link-inner {
 
 .playlist {
   overflow: hidden;
+  /* The progress bar */
+}
+
+.playlist .playlist__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .playlist .playlist__row {
@@ -1052,35 +1063,58 @@ button.offset__link .offset__link-inner, a.offset__link .offset__link-inner {
 
 .playlist .playlist__item-button {
   margin-left: 1rem;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.playlist .playlist__item-button::before {
+  content: "[ ";
+}
+
+.playlist .playlist__item-button::after {
+  content: " ]";
+}
+
+.playlist .playlist__bar {
+  background-color: yellow;
+  height: 1rem;
+  width: 0;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  z-index: 1;
 }
 
 .playlist .playlist__item {
   position: relative;
-  padding-top: 2rem;
+  padding: 2rem 1rem 0 1rem;
+  overflow: hidden;
+  /* The hover state */
 }
 
-.playlist .playlist__item::after {
+.playlist .playlist__item::before {
   content: "";
-  background-color: yellow;
+  background-color: #e4e7e7;
   height: 100%;
   width: 100%;
   position: absolute;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-  top: 0;
-  left: -1px;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  top: -1px;
+  left: 0;
   -webkit-transition: .5s;
   transition: .5s;
-  z-index: -1;
+  z-index: -2;
 }
 
 .playlist .playlist__item:hover {
   cursor: pointer;
+  background-color: initial;
 }
 
-.playlist .playlist__item:hover::after {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+.playlist .playlist__item:hover::before {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .playlist .playlist__item:hover .playlist__item-button {
