@@ -28,12 +28,10 @@
         </figure>
       </div>
       <article class="content__text">
-        <h2 data-splitting class="subheading">Biography</h2>
-        <p>Arlo Adams is a classically trained violinist, performing as a soloist, chamber musician, and orchestral player in Denver and throughout the Colorado area. Along with performing in the Fort Collins Symphony, he has performed with the Greeley Philharmonic, Boulder Chamber Orchestra, and many Colorado based chamber groups including the Lyric Ensemble, Playground Ensemble, Sphere Ensemble, Con Brio Trio, and ARTsemble.</p>
-        <p>Mr. Adams began his studies in Flagstaff Arizona at the age of 9 under the Suzuki method. From there, he moved to the Tucson area to study with Professor Mark Rush at the University of Arizona for two years before coming to Colorado to continue his studies at the University of Denver, where he received a Bachelor's of Music in Violin Performance, and a Performance Certificate.</p>
-        <p>During his studies, he became very interested in modern music, and since then has premiered orchestral works by Shafer Mahoney and Glenn Stallcop, the chamber work Deux pas de Deux for violin and piano by Charles Zoll, winner of the 2013 “Rapido!” composition contest, and was the violin soloist with the Lamont Symphony Orchestra in the premier performance of Sarah Perske's Therese's Elevator.        </p>
-        <p>In addition to classical music, Mr. Adams enjoys other genres including pop and jazz, and performing with a looper to create unique music. He also performs in musical theatre pits around the country, and as a session violinist in recording studios.</p>
-        <p>He has held a studio of ~15 students in the Denver area since 2014, and works with Manifest String Studio and City Strings to bring the joy and excitement of music to kids and adults alike throughout Denver. When he is not performing or teaching, he is likely enjoying what Colorado has to offer and building small electronics projects.</p>
+        <h2 data-splitting class="subheading">My violin studio</h2>
+        <p>I have held a small Suzuki violin studio in the Denver area since 2014, where I teach violinists of all levels—from complete beginner to advanced—the joys of playing music. As a former Suzuki student myself, I find that the Suzuki method and its ideologies have great success with students, and I generally use the Suzuki method with my students. That said, I am not afraid to supplement my students' learning with other resources and pedagogical tools! We live in the 21st century, and there are so many resources available for budding violinists that it would be a shame not to use what's out there.</p>
+        <p>In addition to my private violin studio, I also teach group violin classes with City Strings to bring music to underprivileged kids around Denver. Regardless of the situation, I love to bring the joy and excitement of music to both kids and adults!</p>
+        <p>My violin lessons are 30, 45, or 60 minutes long, and I am happy to teach both in-home lessons or online. If you are not sure what length of lesson you need, or have any other questions regarding my violin studio, please feel free to ask! </p>
       </article>
     </section>
     <Footer />

@@ -2,7 +2,12 @@
   <header class="navbar">
     <div class="navbar__left">
       <span class="navbar__left-text">
-        NOW PLAYING <i>ADAGIO FROM SONATA #1</i> BY J.S. BACH
+        <template v-if="getCurTrack">
+          {{ getCurTrack }} 
+        </template>
+        <template v-else>
+          <router-link class="unstyled__link" to="/">ARLO ADAMS, VIOLINIST</router-link>
+        </template>
       </span>
     </div>
     <nav class="navbar__right">
@@ -23,5 +28,17 @@ export default {
   emits: {
     toggleMenu: null
   },
+  inject: ['playlistController'],
+  computed: {
+    getCurTrack() {
+      if (!this.playlistController.value || !this.playlistController.value.isPlaying) return null;
+
+      let text = "NOW PLAYING ";
+      const name = this.playlistController.value.getCurTrackData().name;
+      const composer = this.playlistController.value.getCurTrackData().composer;
+      
+      return text + name + " by " + composer;
+    }
+  }
 }
 </script>

@@ -12,11 +12,4 @@
     z-index: -1;
     transition: .3s;
   }
-
-  &:hover {
-    &::after {
-      top: 0;
-      left: 0;
-    }
-  }
 }

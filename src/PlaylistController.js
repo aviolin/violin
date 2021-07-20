@@ -1,18 +1,17 @@
 import { Howl, Howler } from 'howler';
-import redViolinAudio from './assets/audio/redviolin.mp3';
+import { trackData } from './data';
 
 export default class PlaylistController {
   constructor() {
     this.isPlaying = false;
     this.curTrack = 0;
-    this.tracks = [redViolinAudio];
     this.curHowl = null;
-
+    this.trackData = trackData;
     console.log("Playlist initiated");
   }
 
   play(track) {
-    if (!this.tracks[track]) {
+    if (!this.trackData[track].file) {
       console.log("No track");
       return;
     }
@@ -20,7 +19,7 @@ export default class PlaylistController {
     this.stop();
 
     this.curHowl = new Howl({
-      src: this.tracks[track],
+      src: this.trackData[track].file,
       onend: () => {
         this.stop();
       }
@@ -35,5 +34,9 @@ export default class PlaylistController {
     if (!this.curHowl) return;
     this.curHowl.stop();
     this.isPlaying = false;
+  }
+
+  getCurTrackData() {
+    return this.trackData[this.curTrack];
   }
 }

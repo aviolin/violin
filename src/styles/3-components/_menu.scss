@@ -21,6 +21,7 @@
     align-items: center;
     max-width: $breakpoint-lg;
     margin: auto;
+    padding: 5rem 0 0 0;
   }
 
   .menu__footer {
@@ -38,7 +39,6 @@
 
   .offset__links {
     margin-right: 1rem;
-    margin-top: 10rem;
   }
 
   @media only screen and (min-width: $breakpoint-lg) {

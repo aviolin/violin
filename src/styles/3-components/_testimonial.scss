@@ -1,7 +1,12 @@
 .testimonial {
-  background-color: $color-gray-100;
+  background: linear-gradient(to bottom, $color-gray-100 0%, $color-accent-100 100%);
   color: $color-gray-900;
-  padding: 5rem 0;
+  padding: 5rem 1rem 0 1rem;
+  /* background-image: url("../assets/arlorecording.webp");
+  background-size: cover;
+  background-blend-mode: overlay; */
+/*   border-top: 1px solid $color-gray-100;
+  border-bottom: 1px solid $color-gray-00; */
 
   p {
     font-family: $font-serif;
@@ -17,7 +22,7 @@
   }
 
   @media only screen and (min-width: $breakpoint-sm) {
-    padding: 10rem 0;
+    padding: 10rem 1rem 0rem 1rem;
 
     p {
       font-size: 4rem;

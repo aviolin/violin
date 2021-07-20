@@ -20,7 +20,7 @@
       <router-link to="/contact" class="offset__link"><span class="offset__link-inner">CONTACT</span></router-link>
     </div>
     <div class="footer__info">
-      <span class="footer__email">arlo.s.adams@gmail.com</span>
+      <span class="footer__email"><a href="mailto:arlo.s.adams@gmail.com">arlo.s.adams@gmail.com</a></span>
       <span class="footer__copyright">&copy; Copyright 2021, Arlo Adams</span>
     </div>
   </footer>

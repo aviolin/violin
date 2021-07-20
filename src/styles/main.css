@@ -1,6 +1,6 @@
 /* @import '0-abstracts/abstracts'; */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Calligraffitti&family=Gochi+Hand&family=Gruppo&family=Niconne&family=Tangerine:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap");
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -550,10 +550,10 @@ body {
 }
 
 h1 {
-  font-family: "Italiana", serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 9vw;
   line-height: 9vw;
-  font-weight: 100;
+  font-weight: 400;
   margin: 0;
 }
 
@@ -572,7 +572,7 @@ h1 {
 }
 
 h2 {
-  font-family: "Italiana", serif;
+  font-family: "Cormorant Garamond", serif;
   font-weight: 100;
   font-size: 2rem;
   margin-top: 0;
@@ -604,11 +604,6 @@ h2::after {
   transition: .3s;
 }
 
-h2:hover::after {
-  top: 0;
-  left: 0;
-}
-
 @media only screen and (min-width: 768px) {
   h2 {
     font-size: calc(2rem + 2vw);
@@ -630,11 +625,11 @@ input,
 textarea,
 label {
   font-size: 2rem;
-  font-family: "Italiana", serif;
+  font-family: "Cormorant Garamond", serif;
 }
 
 form button {
-  font-family: "Italiana", serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
 }
 
@@ -644,7 +639,7 @@ form button {
 }
 
 .footer .footer__link {
-  font-family: "Italiana", serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 10vw;
   text-decoration: none;
 }
@@ -756,7 +751,7 @@ form .form-row {
 }
 
 /* Buttons & Links */
-button, a {
+button, a:not(.unstyled__link) {
   background: none;
   border: 0;
   padding: 0;
@@ -765,31 +760,31 @@ button, a {
   transition: .3s;
 }
 
-button.navbar__button, button.navbar__link, button.offset__link, a.navbar__button, a.navbar__link, a.offset__link {
+button.navbar__button, button.navbar__link, button.offset__link, a:not(.unstyled__link).navbar__button, a:not(.unstyled__link).navbar__link, a:not(.unstyled__link).offset__link {
   display: block;
   white-space: nowrap;
   padding: 0 .5rem;
 }
 
-button.navbar__button::before, button.navbar__link::before, button.offset__link::before, a.navbar__button::before, a.navbar__link::before, a.offset__link::before {
+button.navbar__button::before, button.navbar__link::before, button.offset__link::before, a:not(.unstyled__link).navbar__button::before, a:not(.unstyled__link).navbar__link::before, a:not(.unstyled__link).offset__link::before {
   content: "[ ";
 }
 
-button.navbar__button::after, button.navbar__link::after, button.offset__link::after, a.navbar__button::after, a.navbar__link::after, a.offset__link::after {
+button.navbar__button::after, button.navbar__link::after, button.offset__link::after, a:not(.unstyled__link).navbar__button::after, a:not(.unstyled__link).navbar__link::after, a:not(.unstyled__link).offset__link::after {
   content: " ]";
 }
 
-button.router-link-exact-active, a.router-link-exact-active {
+button.router-link-exact-active, a:not(.unstyled__link).router-link-exact-active {
   color: #fbf9f6;
   background-color: #010101;
 }
 
-button:hover, a:hover {
+button:hover, a:not(.unstyled__link):hover {
   background-color: yellow;
   color: #010101;
 }
 
-button.offset__link .offset__link-inner, a.offset__link .offset__link-inner {
+button.offset__link .offset__link-inner, a:not(.unstyled__link).offset__link .offset__link-inner {
   -webkit-transition: .001s;
   transition: .001s;
   white-space: nowrap;
@@ -923,6 +918,7 @@ button.offset__link .offset__link-inner, a.offset__link .offset__link-inner {
           align-items: center;
   max-width: 1024px;
   margin: auto;
+  padding: 5rem 0 0 0;
 }
 
 .menu .menu__footer {
@@ -943,7 +939,6 @@ button.offset__link .offset__link-inner, a.offset__link .offset__link-inner {
 
 .menu .offset__links {
   margin-right: 1rem;
-  margin-top: 10rem;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -978,6 +973,9 @@ button.offset__link .offset__link-inner, a.offset__link .offset__link-inner {
   padding: 1rem;
   z-index: 100;
   background-color: #fbf9f6;
+  /*  .navbar__left-text {
+    display: flex;
+  } */
 }
 
 .navbar .navbar__left,
@@ -988,6 +986,7 @@ button.offset__link .offset__link-inner, a.offset__link .offset__link-inner {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-transform: uppercase;
 }
 
 .navbar .navbar__left * + *,
@@ -1076,7 +1075,7 @@ button.offset__link .offset__link-inner, a.offset__link .offset__link-inner {
 }
 
 .playlist .playlist__bar {
-  background-color: yellow;
+  background-color: #010101;
   height: 1rem;
   width: 0;
   position: absolute;
@@ -1133,13 +1132,19 @@ button.offset__link .offset__link-inner, a.offset__link .offset__link-inner {
 }
 
 .testimonial {
-  background-color: #e4e7e7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e4e7e7), to(#fbf9f6));
+  background: linear-gradient(to bottom, #e4e7e7 0%, #fbf9f6 100%);
   color: #010101;
-  padding: 5rem 0;
+  padding: 5rem 1rem 0 1rem;
+  /* background-image: url("../assets/arlorecording.webp");
+  background-size: cover;
+  background-blend-mode: overlay; */
+  /*   border-top: 1px solid $color-gray-100;
+  border-bottom: 1px solid $color-gray-00; */
 }
 
 .testimonial p {
-  font-family: "Italiana", serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 2rem;
   line-height: 3rem;
   text-align: center;
@@ -1153,7 +1158,7 @@ button.offset__link .offset__link-inner, a.offset__link .offset__link-inner {
 
 @media only screen and (min-width: 768px) {
   .testimonial {
-    padding: 10rem 0;
+    padding: 10rem 1rem 0rem 1rem;
   }
   .testimonial p {
     font-size: 4rem;
@@ -1197,7 +1202,7 @@ button.offset__link .offset__link-inner, a.offset__link .offset__link-inner {
 .offset__link {
   overflow: hidden;
   margin: .5rem 0;
-  font-family: "Italiana", serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 10vw;
   text-decoration: none;
 }
@@ -1256,13 +1261,13 @@ button.offset__link .offset__link-inner, a.offset__link .offset__link-inner {
   transition: .3s;
 }
 
+.contact__form button:hover {
+  background-color: transparent;
+}
+
 .contact__form button:hover::after {
   top: 0;
   left: 0;
-}
-
-.contact__form button:hover {
-  background-color: transparent;
 }
 
 .form-row {

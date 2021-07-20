@@ -7,11 +7,11 @@
           <button class="playlist__item" @click="stop">
             <span class="playlist__bar" v-bind:style="barStyles"></span>
             <div class="playlist__row">
-              <div class="playlist__item-title">{{ track.id + 1 }}. {{ track.name }}</div>
+              <div class="playlist__item-title">{{ track.id + 1 }}. {{ track.name }} - {{ remainingTime }}</div>
               <span class="playlist__item-button">STOP</span>
             </div>
             <div class="playlist__row">
-              <div class="playlist__item-sub">{{ track.subtitle }}</div> 
+              <div class="playlist__item-sub">{{ track.composer }}</div> 
             </div>
           </button>
         </template>
@@ -22,7 +22,7 @@
               <span class="playlist__item-button">PLAY</span>
             </div>
             <div class="playlist__row">
-              <div class="playlist__item-sub">{{ track.subtitle }}</div> 
+              <div class="playlist__item-sub">{{ track.composer }}</div> 
             </div>
           </button>
         </template>
@@ -32,38 +32,16 @@
 </template>
 
 <script>
-const trackData = [
-  {
-    id: 0,
-    name: "Bach: Sonata #1 for Solo Violin",
-    subtitle: "1st movement, Adagio"
-  },
-  {
-    id: 1,
-    name: "Puts: Arches",
-    subtitle: "1st movement, Adagio"
-  },
-  {
-    id: 2,
-    name: "Sibelius: Violin Concerto",
-    subtitle: "1st movement, Adagio"
-  },
-  {
-    id: 3,
-    name: "Bach: Sonata #1 for Solo Violin",
-    subtitle: "1st movement, Adagio"
-  },
-  {
-    id: 4,
-    name: "Puts: Arches",
-    subtitle: "1st movement, Adagio"
-  },
-  {
-    id: 5,
-    name: "Bach: Sonata #1 for Solo Violin",
-    subtitle: "1st movement, Adagio"
-  },
-]
+import { trackData } from '../data';
+
+const numToTime = (num) => {
+  const minutes = ~~(num/60);
+  let seconds = ~~(num % 60);
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+  return minutes + ":" + seconds;
+}
 
 export default {
   name: "Playlist",
@@ -71,15 +49,19 @@ export default {
     return {
       trackData,
       barStyles: {
-        width: "300px"
-      }
+        width: "0%"
+      },
+      elapsedTime: "",
+      remainingTime: "",
     }
   },
-  inject: ['number', 'playlistController'],
+  inject: ['playlistController'],
+  created() {
+    this.animateBar();
+  },
   methods: {
     play(track) {
       this.playlistController.value.play(track);
-      this.animateBar();
     },
     stop() {
       this.playlistController.value.stop();
@@ -88,11 +70,14 @@ export default {
       return this.playlistController.value.isPlaying && this.playlistController.value.curTrack === track;
     },
     animateBar() {
-      this.barStyles.width = (this.playlistController.value.curHowl.seek() / this.playlistController.value.curHowl.duration()) * 100 + "%";
       if (this.playlistController.value.isPlaying) {
-        window.requestAnimationFrame(this.animateBar);
+        this.elapsedTime = this.playlistController.value.curHowl.seek();
+        const remaining = this.playlistController.value.curHowl.duration() - this.elapsedTime;
+        this.remainingTime = numToTime(remaining);
+        this.barStyles.width = (this.elapsedTime / this.playlistController.value.curHowl.duration()) * 100 + "%";
       }
-    }
+      window.requestAnimationFrame(this.animateBar);
+    },
   },
 }
 </script>
