@@ -888,7 +888,9 @@ button.offset__link .offset__link-inner, a:not(.unstyled__link).offset__link .of
   background-color: #fbf9f6;
   color: #010101;
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
   width: 100%;
   padding: 1rem;
