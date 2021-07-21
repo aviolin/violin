@@ -20,7 +20,7 @@ export default class PlaylistController {
 
     this.stop();
 
-    if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
+    /* if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
       console.log("IF");
       Howler.ctx.resume().then(function() {
         console.log("AudioContext resumed!");
@@ -55,7 +55,7 @@ export default class PlaylistController {
     
         console.log("Played sound!");
       });
-    } else {
+    } else { */
       console.log("ELSE");
       this.curHowl = new Howl({
         src: this.trackData[track].file,
@@ -88,7 +88,7 @@ export default class PlaylistController {
       this.isPlaying = true;
   
       console.log("Played sound!");
-    }
+    /* } */
 
     
   }
