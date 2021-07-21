@@ -9,7 +9,9 @@
       :duration="1200" 
       mode="out-in"
     >
-      <component :is="Component" />
+      <keep-alive>
+        <component :is="Component" />
+      </keep-alive>
     </transition>
   </router-view>
 </template>
