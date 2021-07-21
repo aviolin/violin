@@ -20,38 +20,75 @@ export default class PlaylistController {
 
     this.stop();
 
+    if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
+      console.log("IF");
+      Howler.ctx.resume().then(function() {
+        console.log("AudioContext resumed!");
+        this.curHowl = new Howl({
+          src: this.trackData[track].file,
+          html5: true,
+          onload: () => {
+            console.log("Loaded");
+          },
+          onloaderror: (id, err) => {
+            console.log("Load error: ", err);
+          },
+          onplay: () => {
+            console.log("Playing");
+            if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
+              Howler.ctx.resume()
+              console.log("Resumed");
+            }
+          },
+          onplayerror: (id, err) => {
+            console.log("Play error: ", err);
+          },
+          onend: () => {
+            this.stop();
+            this.playNext();
+          }
+        });
     
-    this.curHowl = new Howl({
-      src: this.trackData[track].file,
-      html5: true,
-      onload: () => {
-        console.log("Loaded");
-      },
-      onloaderror: (id, err) => {
-        console.log("Load error: ", err);
-      },
-      onplay: () => {
-        console.log("Playing");
-        console.log(Howler.ctx);
-        if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
-          Howler.ctx.resume()
-          console.log("Resumed");
+        this.curHowl.play();
+        this.curTrack = track;
+        this.isPlaying = true;
+    
+        console.log("Played sound!");
+      });
+    } else {
+      console.log("ELSE");
+      this.curHowl = new Howl({
+        src: this.trackData[track].file,
+        html5: true,
+        onload: () => {
+          console.log("Loaded");
+        },
+        onloaderror: (id, err) => {
+          console.log("Load error: ", err);
+        },
+        onplay: () => {
+          console.log("Playing");
+          console.log(Howler.ctx);
+          if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
+            Howler.ctx.resume()
+            console.log("Resumed");
+          }
+        },
+        onplayerror: (id, err) => {
+          console.log("Play error: ", err);
+        },
+        onend: () => {
+          this.stop();
+          this.playNext();
         }
-      },
-      onplayerror: (id, err) => {
-        console.log("Play error: ", err);
-      },
-      onend: () => {
-        this.stop();
-        this.playNext();
-      }
-    });
-
-    this.curHowl.play();
-    this.curTrack = track;
-    this.isPlaying = true;
-
-    console.log("Played sound!");
+      });
+  
+      this.curHowl.play();
+      this.curTrack = track;
+      this.isPlaying = true;
+  
+      console.log("Played sound!");
+    }
 
     
   }
