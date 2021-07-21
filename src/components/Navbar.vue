@@ -4,6 +4,7 @@
       <span class="navbar__left-text">
         <template v-if="getCurTrack">
           {{ getCurTrack }} 
+          <button class="navbar__button" @click="stopAudio" style="display: inline">STOP</button>
         </template>
         <template v-else>
           <router-link class="unstyled__link" to="/">ARLO ADAMS, VIOLINIST</router-link>
@@ -38,6 +39,11 @@ export default {
       const composer = this.playlistController.value.getCurTrackData().composer;
       
       return text + name + " by " + composer;
+    }
+  },
+  methods: {
+    stopAudio() {
+      this.playlistController.value.stop();
     }
   }
 }
