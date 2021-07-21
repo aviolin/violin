@@ -3,8 +3,8 @@
     <div class="navbar-background"></div>
     <section class="hero">
       <h1 data-splitting class="hero__title">
-        <span class="line">CONTACT ME</span>
-        <span class="line">(ARLO ADAMS)</span>
+        <span class="line">CONTACT</span>
+        <span class="line">ARLO ADAMS</span>
       </h1>
       <div class="hero__img-container">
         <figure class="hero__img">
