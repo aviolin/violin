@@ -7,7 +7,7 @@ export default class PlaylistController {
     this.curTrack = 0;
     this.curHowl = null;
     this.trackData = trackData;
-    console.log("Playlist initiated");
+    /* console.log("Playlist initiated"); */
   }
 
   play(track) {
@@ -16,10 +16,24 @@ export default class PlaylistController {
       return;
     }
 
+    console.log("Playing sound...");
+
     this.stop();
 
     this.curHowl = new Howl({
       src: this.trackData[track].file,
+      onload: () => {
+        console.log("Loaded");
+      },
+      onloaderror: (id, err) => {
+        console.log("Load error: ", err);
+      },
+      onplay: () => {
+        console.log("Playing");
+      },
+      onplayerror: (id, err) => {
+        console.log("Play error: ", err);
+      },
       onend: () => {
         this.stop();
         this.playNext();
@@ -29,6 +43,8 @@ export default class PlaylistController {
     this.curHowl.play();
     this.curTrack = track;
     this.isPlaying = true;
+
+    console.log("Played sound!");
   }
 
   stop() {
