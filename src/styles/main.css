@@ -763,7 +763,7 @@ button, a:not(.unstyled__link) {
 button.navbar__button, button.navbar__link, button.offset__link, a:not(.unstyled__link).navbar__button, a:not(.unstyled__link).navbar__link, a:not(.unstyled__link).offset__link {
   display: block;
   white-space: nowrap;
-  padding: 0 .5rem;
+  padding: 0;
   white-space: nowrap;
 }
 
@@ -974,6 +974,7 @@ button.offset__link .offset__link-inner, a:not(.unstyled__link).offset__link .of
   padding: 1rem;
   z-index: 100;
   background-color: #fbf9f6;
+  width: 100%;
   /*  .navbar__left-text {
     display: flex;
   } */
@@ -1031,6 +1032,7 @@ button.offset__link .offset__link-inner, a:not(.unstyled__link).offset__link .of
 
 .playlist {
   overflow: hidden;
+  width: 100%;
   /* The progress bar */
 }
 

@@ -63,7 +63,6 @@ export default {
   methods: {
     sendEmail(e) {
       this.emailState = "Sending...";
-      console.log(process.env.VUE_APP_EMAIL_SERVICE_ID)
       emailjs.sendForm(process.env.VUE_APP_EMAIL_SERVICE_ID, process.env.VUE_APP_EMAIL_TEMPLATE_ID, e.target, process.env.VUE_APP_EMAIL_USER_ID)
         .then((result) => {
             this.emailState = "Email sent!"
