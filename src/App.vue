@@ -40,20 +40,20 @@ export default {
   },
   methods: {
     toggleMenu(b = null) {
-      const body = document.querySelector('body');
+      /* const body = document.querySelector('body'); */
       if (b !== null) {
         if (b === "open") {
           this.isMenuOpen = true;
-          body.classList.add('hide-overflow-y');
+          /* body.classList.add('hide-overflow-y'); */
         } else if (b === "close") {
           this.isMenuOpen = false;
-          body.classList.remove('hide-overflow-y');
+          /* body.classList.remove('hide-overflow-y'); */
         }
         return;
       }
 
       this.isMenuOpen = !this.isMenuOpen;
-      body.classList.toggle('hide-overflow-y');
+      /* body.classList.toggle('hide-overflow-y'); */
     }
   },
   provide() {
