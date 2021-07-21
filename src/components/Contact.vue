@@ -8,7 +8,10 @@
       </h1>
       <div class="hero__img-container">
         <figure class="hero__img">
-          <img src="../assets/arlo-1.png" alt="Arlo Adams playing violin." />
+          <picture>
+            <source srcset="../assets/arlo-1.png" alt="Arlo Adams playing violin." />
+            <img src="../assets/arlo-1.png" alt="Arlo Adams playing violin." />
+          </picture>
         </figure>
       </div>
     </section>

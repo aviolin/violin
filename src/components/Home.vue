@@ -10,7 +10,10 @@
       </h1>
       <div class="hero__img-container">
         <figure class="hero__img">
-          <img src="../assets/arlo-1.png" alt="Arlo Adams playing violin." />
+          <picture>
+            <source srcset="../assets/arlo-1.png" alt="Arlo Adams playing violin." />
+            <img src="../assets/arlo-1.png" alt="Arlo Adams playing violin." />
+          </picture>
         </figure>
       </div>
     </section>
@@ -18,7 +21,11 @@
     <section class="content">
       <div class="content__img-container">
         <figure class="content__img">
-          <img src="../assets/arlo-2.webp" alt="Arlo Adams headshot." />
+          <picture>
+            <source srcset="../assets/arlo-2.webp" type="image/webp">
+            <source srcset="../assets/arlo-2.jpg">
+            <img src="../assets/arlo-2.jpg" alt="Arlo Adams headshot.">
+          </picture>
         </figure>
       </div>
       <article class="content__text">
