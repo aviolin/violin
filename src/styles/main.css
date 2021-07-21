@@ -888,11 +888,10 @@ button.offset__link .offset__link-inner, a:not(.unstyled__link).offset__link .of
   background-color: #fbf9f6;
   color: #010101;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
   z-index: 50;
   width: 100%;
+  height: 100%;
   padding: 1rem;
   overflow-y: auto;
 }
