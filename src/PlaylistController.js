@@ -64,6 +64,10 @@ export default class PlaylistController {
         },
         onplay: () => {
           console.log("Playing");
+          if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
+            Howler.ctx.resume()
+            console.log("Resumed");
+          }
         },
         onplayerror: (id, err) => {
           console.log("Play error: ", err);
