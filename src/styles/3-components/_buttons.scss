@@ -12,6 +12,7 @@ button, a:not(.unstyled__link) {
     display: block;
     white-space: nowrap;
     padding: 0 .5rem;
+    white-space: nowrap;
 
     &::before {
       content: "[ ";

@@ -5,7 +5,9 @@
       <template v-for="track in trackData" :key="track.id">
         <template v-if="isPlayingTrack(track.id)">
           <button class="playlist__item" @click="stop">
-            <span class="playlist__bar" v-bind:style="barStyles"></span>
+            <div class="playlist__bar-container" @click.stop="seek">
+              <span class="playlist__bar" v-bind:style="barStyles"></span>
+            </div>
             <div class="playlist__row">
               <div class="playlist__item-title">{{ track.id + 1 }}. {{ track.name }} - {{ remainingTime }}</div>
               <span class="playlist__item-button">STOP</span>
@@ -66,6 +68,12 @@ export default {
     stop() {
       this.playlistController.value.stop();
     },
+    seek(e) {
+      const clickPosX = e.clientX - e.target.offsetParent.offsetLeft;
+      const targetWidth = e.target.offsetWidth;
+      const seekPercent = clickPosX / targetWidth;
+      this.playlistController.value.seek(seekPercent);
+    },
     isPlayingTrack(track) {
       return this.playlistController.value.isPlaying && this.playlistController.value.curTrack === track;
     },
@@ -74,10 +82,14 @@ export default {
         this.elapsedTime = this.playlistController.value.curHowl.seek();
         const remaining = this.playlistController.value.curHowl.duration() - this.elapsedTime;
         this.remainingTime = numToTime(remaining);
+        if (this.playlistController.value.curHowl.state() === "loading") {
+          this.remainingTime = "Loading...";
+        }
         this.barStyles.width = (this.elapsedTime / this.playlistController.value.curHowl.duration()) * 100 + "%";
       }
       window.requestAnimationFrame(this.animateBar);
     },
+
   },
 }
 </script>

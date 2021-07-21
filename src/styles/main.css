@@ -764,6 +764,7 @@ button.navbar__button, button.navbar__link, button.offset__link, a:not(.unstyled
   display: block;
   white-space: nowrap;
   padding: 0 .5rem;
+  white-space: nowrap;
 }
 
 button.navbar__button::before, button.navbar__link::before, button.offset__link::before, a:not(.unstyled__link).navbar__button::before, a:not(.unstyled__link).navbar__link::before, a:not(.unstyled__link).offset__link::before {
@@ -846,13 +847,13 @@ button.offset__link .offset__link-inner, a:not(.unstyled__link).offset__link .of
 }
 
 .marquee .marquee__inner.left {
-  -webkit-animation: marquee-left 30s linear infinite;
-          animation: marquee-left 30s linear infinite;
+  -webkit-animation: marquee-left 60s linear infinite;
+          animation: marquee-left 60s linear infinite;
 }
 
 .marquee .marquee__inner.right {
-  -webkit-animation: marquee-right 30s linear infinite;
-          animation: marquee-right 30s linear infinite;
+  -webkit-animation: marquee-right 60s linear infinite;
+          animation: marquee-right 60s linear infinite;
 }
 
 .marquee .marquee__inner-container {
@@ -1064,6 +1065,7 @@ button.offset__link .offset__link-inner, a:not(.unstyled__link).offset__link .of
   margin-left: 1rem;
   -webkit-transition: .3s;
   transition: .3s;
+  white-space: nowrap;
 }
 
 .playlist .playlist__item-button::before {
@@ -1074,14 +1076,23 @@ button.offset__link .offset__link-inner, a:not(.unstyled__link).offset__link .of
   content: " ]";
 }
 
+.playlist .playlist__bar-container {
+  background-color: #e4e7e7;
+  height: 1rem;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
 .playlist .playlist__bar {
   background-color: #010101;
-  height: 1rem;
-  width: 0;
   position: absolute;
   top: 0;
   left: -1px;
-  z-index: 1;
+  height: 100%;
+  pointer-events: none;
 }
 
 .playlist .playlist__item {
@@ -1089,6 +1100,10 @@ button.offset__link .offset__link-inner, a:not(.unstyled__link).offset__link .of
   padding: 2rem 1rem 0 1rem;
   overflow: hidden;
   /* The hover state */
+}
+
+.playlist .playlist__item .playlist__item-title {
+  text-align: left;
 }
 
 .playlist .playlist__item::before {

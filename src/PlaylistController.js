@@ -22,6 +22,7 @@ export default class PlaylistController {
       src: this.trackData[track].file,
       onend: () => {
         this.stop();
+        this.playNext();
       }
     });
 
@@ -34,6 +35,31 @@ export default class PlaylistController {
     if (!this.curHowl) return;
     this.curHowl.stop();
     this.isPlaying = false;
+  }
+
+  pause() {
+    if (!this.curHowl) return;
+    this.curHowl.pause();
+  }
+
+  // pos: Float (0 - 1)
+  seek(pos) {
+    if (!this.curHowl) return;
+    if (pos < 0 || pos > 1) pos = 0;
+    this.curHowl.seek(this.curHowl.duration() * pos);
+  }
+
+  playNext() {
+    const totalTracks = this.trackData.length;
+    if (this.curTrack < totalTracks - 1) {
+      setTimeout(() => {
+        this.play(this.curTrack + 1);
+      }, 3000)
+    } else {
+      setTimeout(() => {
+        this.play(0);
+      }, 3000)
+    }
   }
 
   getCurTrackData() {

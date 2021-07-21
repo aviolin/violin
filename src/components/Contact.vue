@@ -20,7 +20,7 @@
       </article>
     </section>
     <section class="no-overflow contact">
-      <form class="contact__form">
+      <form class="contact__form" @submit.prevent="sendEmail">
         <div class="form-row">
           <input name="name" id="name" type="text" autocomplete="off" required />
           <label for="name">Your name</label>
@@ -34,7 +34,7 @@
           <label for="message">Your message</label>
         </div>
         <div class="form-row">
-          <button>SEND ></button>
+          <button>{{ emailState }}</button>
         </div>
       </form>
     </section>
@@ -45,14 +45,32 @@
 <script>
 import Footer from './Footer';
 import Splitting from 'splitting';
+import emailjs from 'emailjs-com';
 
 export default {
   name: "Contact",
   components: {
     Footer
   },
+  data() {
+    return {
+      emailState: "SEND >"
+    }
+  },
   mounted() {
     Splitting();
+  },
+  methods: {
+    sendEmail(e) {
+      this.emailState = "Sending...";
+      console.log(process.env.VUE_APP_EMAIL_SERVICE_ID)
+      emailjs.sendForm(process.env.VUE_APP_EMAIL_SERVICE_ID, process.env.VUE_APP_EMAIL_TEMPLATE_ID, e.target, process.env.VUE_APP_EMAIL_USER_ID)
+        .then((result) => {
+            this.emailState = "Email sent!"
+        }, (error) => {
+            this.emailState = "Error :( Please try again."
+        });
+    }
   }
 }
 </script>

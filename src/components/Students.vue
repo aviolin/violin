@@ -16,7 +16,7 @@
     </section>
     <section class="testimonial full-bleed fade-on-page-leave">
       <div class="no-overflow">
-        <p>"The world's GREATEST violin teacher!"</p>
+        <p>“The world's GREATEST violin teacher!”</p>
       </div><div class="no-overflow">
         <p class="sub">( at least that's what my students say )</p>
       </div>
