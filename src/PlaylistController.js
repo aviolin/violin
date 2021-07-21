@@ -22,32 +22,36 @@ export default class PlaylistController {
 
     if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
       Howler.ctx.resume().then(function() {
-          console.log("AudioContext resumed!");
-          this.curHowl = new Howl({
-            src: this.trackData[track].file,
-            onload: () => {
-              console.log("Loaded");
-            },
-            onloaderror: (id, err) => {
-              console.log("Load error: ", err);
-            },
-            onplay: () => {
-              console.log("Playing");
-            },
-            onplayerror: (id, err) => {
-              console.log("Play error: ", err);
-            },
-            onend: () => {
-              this.stop();
-              this.playNext();
+        console.log("AudioContext resumed!");
+        this.curHowl = new Howl({
+          src: this.trackData[track].file,
+          onload: () => {
+            console.log("Loaded");
+          },
+          onloaderror: (id, err) => {
+            console.log("Load error: ", err);
+          },
+          onplay: () => {
+            console.log("Playing");
+            if(Howler.ctx && Howler.ctx.state && Howler.ctx.state == "suspended") {
+              Howler.ctx.resume()
+              console.log("Resumed");
             }
-          });
-      
-          this.curHowl.play();
-          this.curTrack = track;
-          this.isPlaying = true;
-      
-          console.log("Played sound!");
+          },
+          onplayerror: (id, err) => {
+            console.log("Play error: ", err);
+          },
+          onend: () => {
+            this.stop();
+            this.playNext();
+          }
+        });
+    
+        this.curHowl.play();
+        this.curTrack = track;
+        this.isPlaying = true;
+    
+        console.log("Played sound!");
       });
     } else {
       this.curHowl = new Howl({
