@@ -509,7 +509,7 @@ template {
 }
 
 /* Full page transitions */
-.page-transition-enter-active [data-splitting] .char,
+.page-transition-enter-active [data-splitting] .word,
 .page-transition-enter-active [data-splitting] .whitespace {
   -webkit-animation: slide-in .8s ease both;
           animation: slide-in .8s ease both;
@@ -532,7 +532,7 @@ template {
           animation: slide-right-again 1.2s ease both;
 }
 
-.page-transition-leave-active [data-splitting] .char,
+.page-transition-leave-active [data-splitting] .word,
 .page-transition-leave-active [data-splitting] .whitespace {
   animation: slide-in .4s ease reverse forwards;
 }

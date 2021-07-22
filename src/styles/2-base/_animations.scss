@@ -65,7 +65,7 @@
 
 /* Full page transitions */
 .page-transition-enter-active {
-  [data-splitting] .char,
+  [data-splitting] .word,
   [data-splitting] .whitespace {
     animation: slide-in .8s ease both;
     animation-delay: calc(60ms * var(--word-index)); 
@@ -85,7 +85,7 @@
 }
 
 .page-transition-leave-active {
-  [data-splitting] .char,
+  [data-splitting] .word,
   [data-splitting] .whitespace {
     animation: slide-in .4s ease reverse forwards;
   }
