@@ -1424,7 +1424,6 @@ section {
 }
 
 .content .content__img-container {
-  padding-right: 1rem;
   max-width: 40ch;
   overflow: hidden;
 }
@@ -1444,6 +1443,7 @@ section {
   }
   .content .content__img-container {
     max-width: 60ch;
+    padding-right: 1rem;
   }
 }
 

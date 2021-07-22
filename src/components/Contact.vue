@@ -18,7 +18,7 @@
     <section class="content">
       <article class="content__text">
         <div class="no-overflow">
-          <p>Please feel free to contact me through the form below or at my email address arlo.s.adams@gmail.com if you are interested in violin lessons, or if you are looking to hire a violinist or ensemble for a performance. I will get back to you as soon as I can!</p>
+          <p>Please feel free to contact me through the form below or at my email address <a href="mailto:arlo.s.adams@gmail.com">arlo.s.adams@gmail.com</a> if you are interested in violin lessons, or if you are looking to hire a violinist or ensemble for a performance. I will get back to you as soon as I can!</p>
         </div>
       </article>
     </section>
