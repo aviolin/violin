@@ -17,7 +17,7 @@
         </figure>
       </div>
     </section>
-    <!-- <Playlist />
+    <Playlist />
     <section class="content">
       <div class="content__img-container">
         <figure class="content__img">
@@ -44,21 +44,21 @@
         </div>
       </article>
     </section>
-    <Footer /> -->
+    <Footer />
   </main>
 </template>
 
 <script>
-/* import Footer from './Footer.vue';
-import Playlist from './Playlist.vue'; */
+import Footer from './Footer.vue';
+import Playlist from './Playlist.vue';
 import Splitting from 'splitting';
 
 
 export default {
   name: "home",
   components: {
-/*     Footer,
-    Playlist */
+    Footer,
+    Playlist
   },
   mounted() {
     Splitting();
