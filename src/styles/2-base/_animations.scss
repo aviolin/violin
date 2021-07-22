@@ -1,5 +1,6 @@
 @keyframes slide-in {
   from {
+    transform: translateZ(0);
     transform: translateY(125%) rotate(5deg);
     opacity: 0;
   }
@@ -13,36 +14,44 @@
 
 @keyframes marquee-right {
   0% {
+  transform: translateZ(0);
   transform: translateX(var(--move-final));
   }
   100% {
+  transform: translateZ(0);
   transform: translateX(var(--move-initial));
   }
 }
 
 @keyframes marquee-left {
   0% {
+  transform: translateZ(0);
   transform: translateX(var(--move-initial));
   }
   100% {
+  transform: translateZ(0);
   transform: translateX(var(--move-final));
   }
 }
 
 @keyframes slide-right {
   from {
+    transform: translateZ(0);
     transform: translateX(0%);
   }
   to {
+    transform: translateZ(0);
     transform: translateX(-100%);
   }
 } 
 
 @keyframes slide-right-again {
   from {
+    transform: translateZ(0);
     transform: translate(0%);
   }
   to {
+    transform: translateZ(0);
     transform: translate(100%);
   }
 }
