@@ -8,16 +8,16 @@
         <span class="line">INSTRUCTOR</span>
         <span class="line">&nbsp;&nbsp;&nbsp;&nbsp;& PERFORMER</span>
       </h1>
-      <!-- <div class="hero__img-container">
+      <div class="hero__img-container">
         <figure class="hero__img">
           <picture>
             <source srcset="../assets/arlo-1.png" alt="Arlo Adams playing violin." />
             <img src="../assets/arlo-1.png" alt="Arlo Adams playing violin." />
           </picture>
         </figure>
-      </div> -->
+      </div>
     </section>
-    <!-- <Playlist />
+    <Playlist />
     <section class="content">
       <div class="content__img-container">
         <figure class="content__img">
@@ -44,21 +44,21 @@
         </div>
       </article>
     </section>
-    <Footer /> -->
+    <Footer />
   </main>
 </template>
 
 <script>
-/* import Footer from './Footer.vue';
-import Playlist from './Playlist.vue'; */
+import Footer from './Footer.vue';
+import Playlist from './Playlist.vue';
 import Splitting from 'splitting';
 
 
 export default {
   name: "home",
   components: {
-/*     Footer,
-    Playlist */
+    Footer,
+    Playlist
   },
   mounted() {
     Splitting();
